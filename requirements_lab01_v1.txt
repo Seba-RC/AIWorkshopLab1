@@ -1,0 +1,6 @@
+# Tested core versions; install only if your existing Week 1 environment needs it.
+numpy==1.26.4
+pandas==2.3.1
+matplotlib==3.10.3
+ipykernel==6.30.0
+notebook>=7,<8

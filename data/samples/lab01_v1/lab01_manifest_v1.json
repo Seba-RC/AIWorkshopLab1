@@ -1,0 +1,714 @@
+{
+  "version": 1,
+  "files": [
+    {
+      "file": "train_qualifying_v1.csv",
+      "role": "train",
+      "endpoint": "qualifying",
+      "years": [
+        2019,
+        2020,
+        2021
+      ],
+      "rows": 1197,
+      "sha256": "b27d7ced6faee350895426c54359e4c80e35f7fc74e6b72f7f5998938eb11b3f",
+      "source_file": "qualifying_2019_2021_v1.csv",
+      "source_sha256": "b27d7ced6faee350895426c54359e4c80e35f7fc74e6b72f7f5998938eb11b3f",
+      "source_urls": [
+        "https://api.jolpi.ca/ergast/f1/2019/qualifying/?limit=100&offset=0",
+        "https://api.jolpi.ca/ergast/f1/2019/qualifying/?limit=100&offset=100",
+        "https://api.jolpi.ca/ergast/f1/2019/qualifying/?limit=100&offset=200",
+        "https://api.jolpi.ca/ergast/f1/2019/qualifying/?limit=100&offset=300",
+        "https://api.jolpi.ca/ergast/f1/2019/qualifying/?limit=100&offset=400",
+        "https://api.jolpi.ca/ergast/f1/2020/qualifying/?limit=100&offset=0",
+        "https://api.jolpi.ca/ergast/f1/2020/qualifying/?limit=100&offset=100",
+        "https://api.jolpi.ca/ergast/f1/2020/qualifying/?limit=100&offset=200",
+        "https://api.jolpi.ca/ergast/f1/2020/qualifying/?limit=100&offset=300",
+        "https://api.jolpi.ca/ergast/f1/2021/qualifying/?limit=100&offset=0",
+        "https://api.jolpi.ca/ergast/f1/2021/qualifying/?limit=100&offset=100",
+        "https://api.jolpi.ca/ergast/f1/2021/qualifying/?limit=100&offset=200",
+        "https://api.jolpi.ca/ergast/f1/2021/qualifying/?limit=100&offset=300",
+        "https://api.jolpi.ca/ergast/f1/2021/qualifying/?limit=100&offset=400"
+      ],
+      "transformation": "Byte-for-byte development copy"
+    },
+    {
+      "file": "train_results_v1.csv",
+      "role": "train",
+      "endpoint": "results",
+      "years": [
+        2019,
+        2020,
+        2021
+      ],
+      "rows": 1200,
+      "sha256": "7da03caf06da97109acd67eda15bff9105f0fd2f086b03d2ed2227d1f5e7dbbe",
+      "source_file": "results_2019_2021_v1.csv",
+      "source_sha256": "7da03caf06da97109acd67eda15bff9105f0fd2f086b03d2ed2227d1f5e7dbbe",
+      "source_urls": [
+        "https://api.jolpi.ca/ergast/f1/2019/results/?limit=100&offset=0",
+        "https://api.jolpi.ca/ergast/f1/2019/results/?limit=100&offset=100",
+        "https://api.jolpi.ca/ergast/f1/2019/results/?limit=100&offset=200",
+        "https://api.jolpi.ca/ergast/f1/2019/results/?limit=100&offset=300",
+        "https://api.jolpi.ca/ergast/f1/2019/results/?limit=100&offset=400",
+        "https://api.jolpi.ca/ergast/f1/2020/results/?limit=100&offset=0",
+        "https://api.jolpi.ca/ergast/f1/2020/results/?limit=100&offset=100",
+        "https://api.jolpi.ca/ergast/f1/2020/results/?limit=100&offset=200",
+        "https://api.jolpi.ca/ergast/f1/2020/results/?limit=100&offset=300",
+        "https://api.jolpi.ca/ergast/f1/2021/results/?limit=100&offset=0",
+        "https://api.jolpi.ca/ergast/f1/2021/results/?limit=100&offset=100",
+        "https://api.jolpi.ca/ergast/f1/2021/results/?limit=100&offset=200",
+        "https://api.jolpi.ca/ergast/f1/2021/results/?limit=100&offset=300",
+        "https://api.jolpi.ca/ergast/f1/2021/results/?limit=100&offset=400"
+      ],
+      "transformation": "Byte-for-byte development copy"
+    },
+    {
+      "file": "calibration_qualifying_v1.csv",
+      "role": "calibration",
+      "endpoint": "qualifying",
+      "years": [
+        2022
+      ],
+      "rows": 440,
+      "sha256": "f20203ae3b99fe772cde9e261c8300ad3c71d9cc4e39ca2eb029c50075c0aa3b",
+      "source_file": "qualifying_2022_2024_v1.csv",
+      "source_sha256": "f1e922210f4411116b63eb16a316b816c80d216fd2f3b994022f51b6eacc572e",
+      "source_urls": [
+        "https://api.jolpi.ca/ergast/f1/2022/qualifying/?limit=100&offset=0",
+        "https://api.jolpi.ca/ergast/f1/2022/qualifying/?limit=100&offset=100",
+        "https://api.jolpi.ca/ergast/f1/2022/qualifying/?limit=100&offset=200",
+        "https://api.jolpi.ca/ergast/f1/2022/qualifying/?limit=100&offset=300",
+        "https://api.jolpi.ca/ergast/f1/2022/qualifying/?limit=100&offset=400",
+        "https://api.jolpi.ca/ergast/f1/2023/qualifying/?limit=100&offset=0",
+        "https://api.jolpi.ca/ergast/f1/2023/qualifying/?limit=100&offset=100",
+        "https://api.jolpi.ca/ergast/f1/2023/qualifying/?limit=100&offset=200",
+        "https://api.jolpi.ca/ergast/f1/2023/qualifying/?limit=100&offset=300",
+        "https://api.jolpi.ca/ergast/f1/2023/qualifying/?limit=100&offset=400",
+        "https://api.jolpi.ca/ergast/f1/2024/qualifying/?limit=100&offset=0",
+        "https://api.jolpi.ca/ergast/f1/2024/qualifying/?limit=100&offset=100",
+        "https://api.jolpi.ca/ergast/f1/2024/qualifying/?limit=100&offset=200",
+        "https://api.jolpi.ca/ergast/f1/2024/qualifying/?limit=100&offset=300",
+        "https://api.jolpi.ca/ergast/f1/2024/qualifying/?limit=100&offset=400"
+      ],
+      "transformation": "Filter by season; preserve all source rows, empty values and numeric precision represented in CSV"
+    },
+    {
+      "file": "calibration_results_v1.csv",
+      "role": "calibration",
+      "endpoint": "results",
+      "years": [
+        2022
+      ],
+      "rows": 440,
+      "sha256": "6e0e18192d1d04abe529f617f2510846f11b298ab40d59e22b601d998265aa40",
+      "source_file": "results_2022_2024_v1.csv",
+      "source_sha256": "1ac9a64f1aee1068d38225d2212a492566a82cb10391901d4fe57dbf24e1da12",
+      "source_urls": [
+        "https://api.jolpi.ca/ergast/f1/2022/results/?limit=100&offset=0",
+        "https://api.jolpi.ca/ergast/f1/2022/results/?limit=100&offset=100",
+        "https://api.jolpi.ca/ergast/f1/2022/results/?limit=100&offset=200",
+        "https://api.jolpi.ca/ergast/f1/2022/results/?limit=100&offset=300",
+        "https://api.jolpi.ca/ergast/f1/2022/results/?limit=100&offset=400",
+        "https://api.jolpi.ca/ergast/f1/2023/results/?limit=100&offset=0",
+        "https://api.jolpi.ca/ergast/f1/2023/results/?limit=100&offset=100",
+        "https://api.jolpi.ca/ergast/f1/2023/results/?limit=100&offset=200",
+        "https://api.jolpi.ca/ergast/f1/2023/results/?limit=100&offset=300",
+        "https://api.jolpi.ca/ergast/f1/2023/results/?limit=100&offset=400",
+        "https://api.jolpi.ca/ergast/f1/2024/results/?limit=100&offset=0",
+        "https://api.jolpi.ca/ergast/f1/2024/results/?limit=100&offset=100",
+        "https://api.jolpi.ca/ergast/f1/2024/results/?limit=100&offset=200",
+        "https://api.jolpi.ca/ergast/f1/2024/results/?limit=100&offset=300",
+        "https://api.jolpi.ca/ergast/f1/2024/results/?limit=100&offset=400"
+      ],
+      "transformation": "Filter by season; preserve all source rows, empty values and numeric precision represented in CSV"
+    },
+    {
+      "file": "test_qualifying_v1.csv",
+      "role": "test",
+      "endpoint": "qualifying",
+      "years": [
+        2023,
+        2024
+      ],
+      "rows": 919,
+      "sha256": "253b8a3fa34342fd907aad880c002a203638288f77052ec921158e1578e90f8d",
+      "source_file": "qualifying_2022_2024_v1.csv",
+      "source_sha256": "f1e922210f4411116b63eb16a316b816c80d216fd2f3b994022f51b6eacc572e",
+      "source_urls": [
+        "https://api.jolpi.ca/ergast/f1/2022/qualifying/?limit=100&offset=0",
+        "https://api.jolpi.ca/ergast/f1/2022/qualifying/?limit=100&offset=100",
+        "https://api.jolpi.ca/ergast/f1/2022/qualifying/?limit=100&offset=200",
+        "https://api.jolpi.ca/ergast/f1/2022/qualifying/?limit=100&offset=300",
+        "https://api.jolpi.ca/ergast/f1/2022/qualifying/?limit=100&offset=400",
+        "https://api.jolpi.ca/ergast/f1/2023/qualifying/?limit=100&offset=0",
+        "https://api.jolpi.ca/ergast/f1/2023/qualifying/?limit=100&offset=100",
+        "https://api.jolpi.ca/ergast/f1/2023/qualifying/?limit=100&offset=200",
+        "https://api.jolpi.ca/ergast/f1/2023/qualifying/?limit=100&offset=300",
+        "https://api.jolpi.ca/ergast/f1/2023/qualifying/?limit=100&offset=400",
+        "https://api.jolpi.ca/ergast/f1/2024/qualifying/?limit=100&offset=0",
+        "https://api.jolpi.ca/ergast/f1/2024/qualifying/?limit=100&offset=100",
+        "https://api.jolpi.ca/ergast/f1/2024/qualifying/?limit=100&offset=200",
+        "https://api.jolpi.ca/ergast/f1/2024/qualifying/?limit=100&offset=300",
+        "https://api.jolpi.ca/ergast/f1/2024/qualifying/?limit=100&offset=400"
+      ],
+      "transformation": "Filter by season; preserve all source rows, empty values and numeric precision represented in CSV"
+    },
+    {
+      "file": "test_results_v1.csv",
+      "role": "test",
+      "endpoint": "results",
+      "years": [
+        2023,
+        2024
+      ],
+      "rows": 919,
+      "sha256": "a76558992721d43fe28ba8cb7c42ffc2eebaa18c71fbdfbe5c887e4e4671a385",
+      "source_file": "results_2022_2024_v1.csv",
+      "source_sha256": "1ac9a64f1aee1068d38225d2212a492566a82cb10391901d4fe57dbf24e1da12",
+      "source_urls": [
+        "https://api.jolpi.ca/ergast/f1/2022/results/?limit=100&offset=0",
+        "https://api.jolpi.ca/ergast/f1/2022/results/?limit=100&offset=100",
+        "https://api.jolpi.ca/ergast/f1/2022/results/?limit=100&offset=200",
+        "https://api.jolpi.ca/ergast/f1/2022/results/?limit=100&offset=300",
+        "https://api.jolpi.ca/ergast/f1/2022/results/?limit=100&offset=400",
+        "https://api.jolpi.ca/ergast/f1/2023/results/?limit=100&offset=0",
+        "https://api.jolpi.ca/ergast/f1/2023/results/?limit=100&offset=100",
+        "https://api.jolpi.ca/ergast/f1/2023/results/?limit=100&offset=200",
+        "https://api.jolpi.ca/ergast/f1/2023/results/?limit=100&offset=300",
+        "https://api.jolpi.ca/ergast/f1/2023/results/?limit=100&offset=400",
+        "https://api.jolpi.ca/ergast/f1/2024/results/?limit=100&offset=0",
+        "https://api.jolpi.ca/ergast/f1/2024/results/?limit=100&offset=100",
+        "https://api.jolpi.ca/ergast/f1/2024/results/?limit=100&offset=200",
+        "https://api.jolpi.ca/ergast/f1/2024/results/?limit=100&offset=300",
+        "https://api.jolpi.ca/ergast/f1/2024/results/?limit=100&offset=400"
+      ],
+      "transformation": "Filter by season; preserve all source rows, empty values and numeric precision represented in CSV"
+    }
+  ],
+  "scope": "Available Jolpica race-result and qualifying records, 2019\u20132024; not an as-of archive or live deployment roster.",
+  "capture_receipts": [
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2019/qualifying/?limit=100&offset=0",
+      "retrieved_at_utc": "2026-09-10T01:03:50.339517+00:00",
+      "sha256": "926feaaf3ca178fb2e6c64e7d73c09f0109ec58f7cd0ff30f857b41be14441c1",
+      "raw_file": "2019_qualifying_0000.json",
+      "total": 418,
+      "limit": 100,
+      "offset": 0
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2019/qualifying/?limit=100&offset=100",
+      "retrieved_at_utc": "2026-09-10T01:03:52.019977+00:00",
+      "sha256": "0adbe726e8fcd252784a8cbfe0a8e2ffb3d6976a4cc1026e47a31e20e779b427",
+      "raw_file": "2019_qualifying_0100.json",
+      "total": 418,
+      "limit": 100,
+      "offset": 100
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2019/qualifying/?limit=100&offset=200",
+      "retrieved_at_utc": "2026-09-10T01:03:53.798799+00:00",
+      "sha256": "d52ba6360ac92d7a0c50f96b80b60fd4814dd0d73dfad2dd1966941120216041",
+      "raw_file": "2019_qualifying_0200.json",
+      "total": 418,
+      "limit": 100,
+      "offset": 200
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2019/qualifying/?limit=100&offset=300",
+      "retrieved_at_utc": "2026-09-10T01:03:55.469520+00:00",
+      "sha256": "2de2d2015a17ff6aa4b36ba14362fd6a6db21ff57899e39748d39344910e9dd3",
+      "raw_file": "2019_qualifying_0300.json",
+      "total": 418,
+      "limit": 100,
+      "offset": 300
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2019/qualifying/?limit=100&offset=400",
+      "retrieved_at_utc": "2026-09-10T01:03:56.986046+00:00",
+      "sha256": "e00874843f9ce1232f0e3be971bc4751bd3076f87acef5ea5b43bdbace55a98c",
+      "raw_file": "2019_qualifying_0400.json",
+      "total": 418,
+      "limit": 100,
+      "offset": 400
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2020/qualifying/?limit=100&offset=0",
+      "retrieved_at_utc": "2026-09-10T01:03:58.640885+00:00",
+      "sha256": "851412869a902e1bff12298281e6f32fde53cc84b4f40ac5edf91b9411d6d10e",
+      "raw_file": "2020_qualifying_0000.json",
+      "total": 340,
+      "limit": 100,
+      "offset": 0
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2020/qualifying/?limit=100&offset=100",
+      "retrieved_at_utc": "2026-09-10T01:04:00.780506+00:00",
+      "sha256": "da9fc7dfaa0b066d4b034eaa1b286f38291383852afac77e3bb9a18ee195aee6",
+      "raw_file": "2020_qualifying_0100.json",
+      "total": 340,
+      "limit": 100,
+      "offset": 100
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2020/qualifying/?limit=100&offset=200",
+      "retrieved_at_utc": "2026-09-10T01:04:02.498391+00:00",
+      "sha256": "edc3b8fc0d74624d8572731610a1e9a00f2388092781c8c13baf3e6041530f6f",
+      "raw_file": "2020_qualifying_0200.json",
+      "total": 340,
+      "limit": 100,
+      "offset": 200
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2020/qualifying/?limit=100&offset=300",
+      "retrieved_at_utc": "2026-09-10T01:04:04.128090+00:00",
+      "sha256": "d39b90c562add20118aaab3d56614a73f4bc4de16d9f63e4f8a2a032ce73ecfd",
+      "raw_file": "2020_qualifying_0300.json",
+      "total": 340,
+      "limit": 100,
+      "offset": 300
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2021/qualifying/?limit=100&offset=0",
+      "retrieved_at_utc": "2026-09-10T01:04:05.154286+00:00",
+      "sha256": "2f4d54485871d47fe2b098d9ab7eb4abb81d90b3a6f00f807f076d04c1b740c7",
+      "raw_file": "2021_qualifying_0000.json",
+      "total": 439,
+      "limit": 100,
+      "offset": 0
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2021/qualifying/?limit=100&offset=100",
+      "retrieved_at_utc": "2026-09-10T01:04:07.410584+00:00",
+      "sha256": "e41d1c9677cbdd7868240d2a066522516d9a08dbc8fcd78f72e630b5bbe799bd",
+      "raw_file": "2021_qualifying_0100.json",
+      "total": 439,
+      "limit": 100,
+      "offset": 100
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2021/qualifying/?limit=100&offset=200",
+      "retrieved_at_utc": "2026-09-10T01:04:09.275276+00:00",
+      "sha256": "0b4ea41b0ff89ddfd88c833c90ac5f804a481a14cf409933d81b25aa4f1885a5",
+      "raw_file": "2021_qualifying_0200.json",
+      "total": 439,
+      "limit": 100,
+      "offset": 200
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2021/qualifying/?limit=100&offset=300",
+      "retrieved_at_utc": "2026-09-10T01:04:11.852815+00:00",
+      "sha256": "778b6ac1108f1d7ae2f261d383be225e39d054a217be69c9c1de05c6ee043640",
+      "raw_file": "2021_qualifying_0300.json",
+      "total": 439,
+      "limit": 100,
+      "offset": 300
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2021/qualifying/?limit=100&offset=400",
+      "retrieved_at_utc": "2026-09-10T01:04:13.401430+00:00",
+      "sha256": "7bd66eb680b6045c2aecac33724b30d4f50458694e805b18b2d17af0b72ab1d6",
+      "raw_file": "2021_qualifying_0400.json",
+      "total": 439,
+      "limit": 100,
+      "offset": 400
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2019/results/?limit=100&offset=0",
+      "retrieved_at_utc": "2026-09-10T01:04:15.336500+00:00",
+      "sha256": "074cd909c013d4cbff158ebf3bd929c6cf562fcff90ce9624e31410893a7488d",
+      "raw_file": "2019_results_0000.json",
+      "total": 420,
+      "limit": 100,
+      "offset": 0
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2019/results/?limit=100&offset=100",
+      "retrieved_at_utc": "2026-09-10T01:04:16.959064+00:00",
+      "sha256": "46ec23a766147340a7c778561dca4eff34734ba66ea2110138b59a20b58bdf83",
+      "raw_file": "2019_results_0100.json",
+      "total": 420,
+      "limit": 100,
+      "offset": 100
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2019/results/?limit=100&offset=200",
+      "retrieved_at_utc": "2026-09-10T01:04:18.549613+00:00",
+      "sha256": "74400415e5be9a88ba34eb04350cb2eb8b1e14c377982ea9589a185cc45f1204",
+      "raw_file": "2019_results_0200.json",
+      "total": 420,
+      "limit": 100,
+      "offset": 200
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2019/results/?limit=100&offset=300",
+      "retrieved_at_utc": "2026-09-10T01:04:21.272660+00:00",
+      "sha256": "c23b2f6a55a65e8e3464cde7627649219388ef8f3de4eb68506c0781f28fb448",
+      "raw_file": "2019_results_0300.json",
+      "total": 420,
+      "limit": 100,
+      "offset": 300
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2019/results/?limit=100&offset=400",
+      "retrieved_at_utc": "2026-09-10T01:04:22.911058+00:00",
+      "sha256": "6a96a409d23e34c75d5edf9701278d90243c1fd238b19f2ab0a84e81bbafde7e",
+      "raw_file": "2019_results_0400.json",
+      "total": 420,
+      "limit": 100,
+      "offset": 400
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2020/results/?limit=100&offset=0",
+      "retrieved_at_utc": "2026-09-10T01:04:24.510915+00:00",
+      "sha256": "95003635400e42a2b4cf11e409ee605098c901a5213ff281254da96b9669cf86",
+      "raw_file": "2020_results_0000.json",
+      "total": 340,
+      "limit": 100,
+      "offset": 0
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2020/results/?limit=100&offset=100",
+      "retrieved_at_utc": "2026-09-10T01:04:26.105590+00:00",
+      "sha256": "ffc268e6506e520273e2621753af2f4f4dd5c6cf5af9551e6965c042047584b3",
+      "raw_file": "2020_results_0100.json",
+      "total": 340,
+      "limit": 100,
+      "offset": 100
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2020/results/?limit=100&offset=200",
+      "retrieved_at_utc": "2026-09-10T01:04:27.758671+00:00",
+      "sha256": "1be35e1f70b6971bf02354c09c89379a5c91115be6c552633c13410d7b2f02ae",
+      "raw_file": "2020_results_0200.json",
+      "total": 340,
+      "limit": 100,
+      "offset": 200
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2020/results/?limit=100&offset=300",
+      "retrieved_at_utc": "2026-09-10T01:04:30.513626+00:00",
+      "sha256": "2fd7648d44edce0daa53284e1553155a84703c5f63c9f824d920f0ccdb786235",
+      "raw_file": "2020_results_0300.json",
+      "total": 340,
+      "limit": 100,
+      "offset": 300
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2021/results/?limit=100&offset=0",
+      "retrieved_at_utc": "2026-09-10T01:04:32.174632+00:00",
+      "sha256": "b3eef4b494be3882c71df362d6253ca3b668a8f661f02115a91f179645bd7658",
+      "raw_file": "2021_results_0000.json",
+      "total": 440,
+      "limit": 100,
+      "offset": 0
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2021/results/?limit=100&offset=100",
+      "retrieved_at_utc": "2026-09-10T01:04:33.792262+00:00",
+      "sha256": "e562aaffd2249481485a374242d3f953b6bfc2201c2aa9fa9528dab6f399b702",
+      "raw_file": "2021_results_0100.json",
+      "total": 440,
+      "limit": 100,
+      "offset": 100
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2021/results/?limit=100&offset=200",
+      "retrieved_at_utc": "2026-09-10T01:04:35.487889+00:00",
+      "sha256": "14b8a5a9cc0ce853e86b0bfad50de743b42d1706de9d4bcc68a27f37e8ac7f3a",
+      "raw_file": "2021_results_0200.json",
+      "total": 440,
+      "limit": 100,
+      "offset": 200
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2021/results/?limit=100&offset=300",
+      "retrieved_at_utc": "2026-09-10T01:04:37.500084+00:00",
+      "sha256": "bb43b9a8c022b06ad31be2e753cbc889f213504fa791aa85f7c076df8fed7af1",
+      "raw_file": "2021_results_0300.json",
+      "total": 440,
+      "limit": 100,
+      "offset": 300
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2021/results/?limit=100&offset=400",
+      "retrieved_at_utc": "2026-09-10T01:04:39.077414+00:00",
+      "sha256": "f622899170629f1fe4075d3e296c876dab6c2563641fedc350fc02eeea849a16",
+      "raw_file": "2021_results_0400.json",
+      "total": 440,
+      "limit": 100,
+      "offset": 400
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2022/qualifying/?limit=100&offset=0",
+      "retrieved_at_utc": "2026-09-10T01:53:38.879374+00:00",
+      "sha256": "a59264a8f9c10b6ac1d8aea3a9d4bf6ccf8a2700568161db3e3ac8a2e539545d",
+      "raw_file": "2022_qualifying_0000.json",
+      "total": 440,
+      "limit": 100,
+      "offset": 0
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2022/qualifying/?limit=100&offset=100",
+      "retrieved_at_utc": "2026-09-10T01:53:40.527270+00:00",
+      "sha256": "f0e4c581c6e53eb36f3b443afa83a874614c3b504b524e7aa63d6194efb7caef",
+      "raw_file": "2022_qualifying_0100.json",
+      "total": 440,
+      "limit": 100,
+      "offset": 100
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2022/qualifying/?limit=100&offset=200",
+      "retrieved_at_utc": "2026-09-10T01:53:42.328312+00:00",
+      "sha256": "0167fa8c56b94f5fccc874d396a6a8950c11bb0816f2a1870c4e790bb0a72487",
+      "raw_file": "2022_qualifying_0200.json",
+      "total": 440,
+      "limit": 100,
+      "offset": 200
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2022/qualifying/?limit=100&offset=300",
+      "retrieved_at_utc": "2026-09-10T01:53:43.997399+00:00",
+      "sha256": "3cab523f08f2de49ba0c86596879f03ee226fba0c2102cf82ece5f24929e4083",
+      "raw_file": "2022_qualifying_0300.json",
+      "total": 440,
+      "limit": 100,
+      "offset": 300
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2022/qualifying/?limit=100&offset=400",
+      "retrieved_at_utc": "2026-09-10T01:53:45.517119+00:00",
+      "sha256": "583c2a57f96ea00bca9361da589eab2bd007da36dff7ff76f96583d1f89fcb1c",
+      "raw_file": "2022_qualifying_0400.json",
+      "total": 440,
+      "limit": 100,
+      "offset": 400
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2023/qualifying/?limit=100&offset=0",
+      "retrieved_at_utc": "2026-09-10T01:53:47.370830+00:00",
+      "sha256": "094d40364d686a8eaf983ffd1d93267a1d77fc4f0ed8a23cd21fd5e33bd5ad39",
+      "raw_file": "2023_qualifying_0000.json",
+      "total": 440,
+      "limit": 100,
+      "offset": 0
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2023/qualifying/?limit=100&offset=100",
+      "retrieved_at_utc": "2026-09-10T01:53:49.049508+00:00",
+      "sha256": "a2939a8d97c15540b40aa8ff9453582e56d77093e2813a3866e4429cf1bc2d48",
+      "raw_file": "2023_qualifying_0100.json",
+      "total": 440,
+      "limit": 100,
+      "offset": 100
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2023/qualifying/?limit=100&offset=200",
+      "retrieved_at_utc": "2026-09-10T01:53:50.732327+00:00",
+      "sha256": "9342d31c4dd8bd05c51e41e7336578c1e4dbb874772a480c010da129fc2467b1",
+      "raw_file": "2023_qualifying_0200.json",
+      "total": 440,
+      "limit": 100,
+      "offset": 200
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2023/qualifying/?limit=100&offset=300",
+      "retrieved_at_utc": "2026-09-10T01:53:52.398772+00:00",
+      "sha256": "c138f9a9940754197d8c72fccafd186ad789ce5f43fca5747b7b67ba49181e3f",
+      "raw_file": "2023_qualifying_0300.json",
+      "total": 440,
+      "limit": 100,
+      "offset": 300
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2023/qualifying/?limit=100&offset=400",
+      "retrieved_at_utc": "2026-09-10T01:53:53.932834+00:00",
+      "sha256": "362b10a868ec19c97b1e5b336e29749fba9b8f1a70bc249da34145c612631018",
+      "raw_file": "2023_qualifying_0400.json",
+      "total": 440,
+      "limit": 100,
+      "offset": 400
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2024/qualifying/?limit=100&offset=0",
+      "retrieved_at_utc": "2026-09-10T01:53:55.758656+00:00",
+      "sha256": "800a9ea1e2a247c1f0d0fa22774d569e505bbea4ba6c337b053144c1e7cfec20",
+      "raw_file": "2024_qualifying_0000.json",
+      "total": 479,
+      "limit": 100,
+      "offset": 0
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2024/qualifying/?limit=100&offset=100",
+      "retrieved_at_utc": "2026-09-10T01:53:57.587482+00:00",
+      "sha256": "6863e42ec409adc137e24a68874da4cfc78e2db085b017ab03fe92af72ef6bea",
+      "raw_file": "2024_qualifying_0100.json",
+      "total": 479,
+      "limit": 100,
+      "offset": 100
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2024/qualifying/?limit=100&offset=200",
+      "retrieved_at_utc": "2026-09-10T01:53:59.218469+00:00",
+      "sha256": "5b0296f8fff001aea53d3e5d26a895760c85d25c6a2d4a0329a7e2a53f43098d",
+      "raw_file": "2024_qualifying_0200.json",
+      "total": 479,
+      "limit": 100,
+      "offset": 200
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2024/qualifying/?limit=100&offset=300",
+      "retrieved_at_utc": "2026-09-10T01:54:01.180348+00:00",
+      "sha256": "5abd92acacfd66fbf990cff9e856978f955f8053fdcf8d5602f41ed8f202c832",
+      "raw_file": "2024_qualifying_0300.json",
+      "total": 479,
+      "limit": 100,
+      "offset": 300
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2024/qualifying/?limit=100&offset=400",
+      "retrieved_at_utc": "2026-09-10T01:54:02.836830+00:00",
+      "sha256": "070fc6ae9e4ef2d7b38b6800097434121323e7131fef3d2478259795637c0a35",
+      "raw_file": "2024_qualifying_0400.json",
+      "total": 479,
+      "limit": 100,
+      "offset": 400
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2022/results/?limit=100&offset=0",
+      "retrieved_at_utc": "2026-09-10T01:54:04.439446+00:00",
+      "sha256": "545424231206080742645c24f95c1f61f55fa13d1063389e084b120590e2bd73",
+      "raw_file": "2022_results_0000.json",
+      "total": 440,
+      "limit": 100,
+      "offset": 0
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2022/results/?limit=100&offset=100",
+      "retrieved_at_utc": "2026-09-10T01:54:06.089052+00:00",
+      "sha256": "042f3bf558bf42bb7f2dac96e708a250c12ec5c578e829acd240e1202cf713c5",
+      "raw_file": "2022_results_0100.json",
+      "total": 440,
+      "limit": 100,
+      "offset": 100
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2022/results/?limit=100&offset=200",
+      "retrieved_at_utc": "2026-09-10T01:54:07.664982+00:00",
+      "sha256": "e464f2cda33953489c63bcd3684d63361bc1f278ce560d096fb0f6cd59722335",
+      "raw_file": "2022_results_0200.json",
+      "total": 440,
+      "limit": 100,
+      "offset": 200
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2022/results/?limit=100&offset=300",
+      "retrieved_at_utc": "2026-09-10T01:54:09.265767+00:00",
+      "sha256": "83f3dfef8020a8935c895afea3d84c62a8d84c6e5924ccc59f58f6c9e62c5640",
+      "raw_file": "2022_results_0300.json",
+      "total": 440,
+      "limit": 100,
+      "offset": 300
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2022/results/?limit=100&offset=400",
+      "retrieved_at_utc": "2026-09-10T01:54:10.752707+00:00",
+      "sha256": "1858df4c0c8c368057dcebe9d5657c9ac35bdef823c8ed6c8af8868bc8be6d8f",
+      "raw_file": "2022_results_0400.json",
+      "total": 440,
+      "limit": 100,
+      "offset": 400
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2023/results/?limit=100&offset=0",
+      "retrieved_at_utc": "2026-09-10T01:54:12.394279+00:00",
+      "sha256": "3226151d335623afb1ffe0e804d47c1e6704f4fd6b7b73fca6acf97ba04a4e56",
+      "raw_file": "2023_results_0000.json",
+      "total": 440,
+      "limit": 100,
+      "offset": 0
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2023/results/?limit=100&offset=100",
+      "retrieved_at_utc": "2026-09-10T01:54:14.018004+00:00",
+      "sha256": "90a3c80afc3e3c120725e1bc75459d316edc5eababdb150bcaf1ec4784bd45a0",
+      "raw_file": "2023_results_0100.json",
+      "total": 440,
+      "limit": 100,
+      "offset": 100
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2023/results/?limit=100&offset=200",
+      "retrieved_at_utc": "2026-09-10T01:54:15.663236+00:00",
+      "sha256": "5bc493da764d4ad926af42150e97f3dd6f440d7be394303ee5f38bde64bd864a",
+      "raw_file": "2023_results_0200.json",
+      "total": 440,
+      "limit": 100,
+      "offset": 200
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2023/results/?limit=100&offset=300",
+      "retrieved_at_utc": "2026-09-10T01:54:17.306838+00:00",
+      "sha256": "070674eab1a040dafe491c8a7a24ec99fac0cc31a8ad8e83975af0eeadd44744",
+      "raw_file": "2023_results_0300.json",
+      "total": 440,
+      "limit": 100,
+      "offset": 300
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2023/results/?limit=100&offset=400",
+      "retrieved_at_utc": "2026-09-10T01:54:18.792372+00:00",
+      "sha256": "0627399a545b9710ac3c4260fc8743aba09ce40f5629019c18eac45c47ea193c",
+      "raw_file": "2023_results_0400.json",
+      "total": 440,
+      "limit": 100,
+      "offset": 400
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2024/results/?limit=100&offset=0",
+      "retrieved_at_utc": "2026-09-10T01:54:20.421478+00:00",
+      "sha256": "fba9af8aef4ac7bb6b2fa4d45e5136e11950a463ec4faa114840f3c055edb81d",
+      "raw_file": "2024_results_0000.json",
+      "total": 479,
+      "limit": 100,
+      "offset": 0
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2024/results/?limit=100&offset=100",
+      "retrieved_at_utc": "2026-09-10T01:54:22.037595+00:00",
+      "sha256": "0ee83afde9842e01cffe4b5f5f4740a22143470ed45ca2c361922d13f8e90b6f",
+      "raw_file": "2024_results_0100.json",
+      "total": 479,
+      "limit": 100,
+      "offset": 100
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2024/results/?limit=100&offset=200",
+      "retrieved_at_utc": "2026-09-10T01:54:23.952138+00:00",
+      "sha256": "f5334be83a8858556f796ad4a49068b2286b48177a51be2600c875dd79d5bc52",
+      "raw_file": "2024_results_0200.json",
+      "total": 479,
+      "limit": 100,
+      "offset": 200
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2024/results/?limit=100&offset=300",
+      "retrieved_at_utc": "2026-09-10T01:54:25.780952+00:00",
+      "sha256": "44bce2c02c18e1118dc0249682a5837880d2895996a1f5f09930429061ac83bf",
+      "raw_file": "2024_results_0300.json",
+      "total": 479,
+      "limit": 100,
+      "offset": 300
+    },
+    {
+      "url": "https://api.jolpi.ca/ergast/f1/2024/results/?limit=100&offset=400",
+      "retrieved_at_utc": "2026-09-10T01:54:27.476807+00:00",
+      "sha256": "40e9524fcc6569d10f4c695cc7b92c52b1e41f459d469de8415d07565e1e05b0",
+      "raw_file": "2024_results_0400.json",
+      "total": 479,
+      "limit": 100,
+      "offset": 400
+    }
+  ]
+}
