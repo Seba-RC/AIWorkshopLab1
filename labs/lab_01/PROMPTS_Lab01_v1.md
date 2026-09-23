@@ -4,13 +4,12 @@ Members: Sebastian Ramorino, Alvaro Torres.
 
 AI used / not used: USED. If used, identify tool, purpose, meaningful assistance, what you accepted/changed and why. Reference relevant prompts or exchanges; no quota is required.
 
-Own decision: TO COMPLETE.
-Verification, observed result and limitation (notebook reference allowed): TO COMPLETE.
+Own decision: USED AI. Referenced below.
+Verification, observed result and limitation (notebook reference allowed): Chose the best two EDA questions out of prompt 1, later integrated both projects into one. Cleaned up given code. 
 
 | Member | Contribution and evidence reference |
-|---|---|
-| TO COMPLETE | TO COMPLETE |
-| TO COMPLETE | TO COMPLETE |
+| Álvaro Torres | Sections 4-7; last EDA, Baselines and check, Freeze and Final interpretation. Prompts referenced below. |
+| Sebastián Ramorino | Sections 1-3; initial exploration, EDA questions proposal, first 2 EDA questions. Prompts referenced below. |
 
 Prompts used:
 Sebastian Ramorino
@@ -70,3 +69,21 @@ Claude:
 "Could you code checks for duplicate keys, qualifying-only records, missing values and coverage?"
 
 (Code in the runbook.)
+
+# 3.
+- Tool: Claude Sonnet 5 Medium
+- Purpose: Programming EDA
+- Meaningful assistance: Provided data exploration and graphs.
+
+## PROMPT
+
+"Could you now program the EDA analysis for prompts: Grid position → top-10 rate, and Qualifying position vs. grid position."
+
+(Code in the runbook.)
+
+# 4.
+- Tool: ChatGPT 5.6 
+- Purpose: Programming remaining EDA, baselines, freeze and final conclusion
+- Meaningful assistance: Provided said elements, later reinterpreted and verified by the group to make better sense in the context.
+
+(All content in runbook.)
