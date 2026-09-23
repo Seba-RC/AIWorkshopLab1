@@ -1,89 +1,54 @@
 # Lab 1 · AI and contribution record
 
-Members: Sebastian Ramorino, Alvaro Torres.
+Members: Sebastián Ramorino, Álvaro Torres.
 
-AI used / not used: USED. If used, identify tool, purpose, meaningful assistance, what you accepted/changed and why. Reference relevant prompts or exchanges; no quota is required.
+## AI used / not used
 
-Own decision: USED AI. Referenced below.
-Verification, observed result and limitation (notebook reference allowed): Chose the best two EDA questions out of prompt 1, later integrated both projects into one. Cleaned up given code. 
+USED. Two tools were used across the lab, by different members for different sections:
+
+- **Sebastián Ramorino** used Claude Sonnet 5 (Anthropic), via chat, for Sections 1–3: framing the target/audit definition (prediction moment, unit, population, target, classification-vs-completion distinction), proposing and helping select EDA questions, and drafting/debugging the pandas/matplotlib code for the data-quality checks and the first two EDA questions (grid-slot top-10 rate; qualifying position vs. grid position).
+- **Álvaro Torres** used an AI assistant for Sections 4–7, to help inspect the supplied notebook structure, draft reproducible pandas/matplotlib analysis cells, and improve the wording of the audit and interpretation sections. Meaningful assistance accepted: suggestion of three train-only EDA questions; drafted code for qualifying-position bands, seasonal stability, and the missing-qualifying selection check; drafted neutral explanations of the confusion-matrix metrics and prediction-moment constraints. (Tool: ChatGPT 5.6 — see Prompts, entry 4.)
+
+## Own decision
+
+- **Sebastián:** Selected which 2 of the 6 proposed EDA questions to pursue first (grid-slot top10 rate; qualifying vs. grid), based on which gave the clearest interpretable chart with the least additional feature engineering. Verified the target definition (`target_top10` from numeric `position`, not `position_text` or `status`) against the actual column contents before accepting it.
+- **Álvaro:** Decided to use the missing-qualifying records as an explicit selection-trap EDA question rather than dropping them, because the brief defines the population from race results and requires a left join with a fixed majority fallback.
+
+## Verification, observed result and limitation
+
+**Sebastián (Sections 1–3):** Ran every AI-suggested cell against the actual `train`/`qualifying`/`results` DataFrames rather than trusting the code by inspection — confirmed the duplicate-key check returned 0 unexpected duplicates, confirmed the anti-join counts matched the missing-qualifying counts shown in the notebook (2/0/1 rows by season), and confirmed the `is_numeric_text` check flagged the expected letter codes (`R`, `W`, `D`, etc.) with no unexpected numeric-nulls. Cleaned up the AI-generated code for redundant intermediate variables before merging with Álvaro's sections (shared `grid_bucket` labeling, consistent target column naming). Limitation: the AI-drafted checks and questions rely on the 2019–2021 dataset as given, so conclusions inherit the source limitations documented in Section 1 (missing qualifying rows, pre-2022 regulation era, no weather/reliability data) — the AI did not independently verify these against the source, they were reasoned from the data itself.
+
+**Álvaro (Sections 4–7):** The generated calculations were checked directly against the supplied CSV snapshots and the provided `lab01_support_v1.py` functions. Observed training counts were independently checked: 1,200 result rows, 1,197 qualifying rows, 3 unmatched result keys, and a 50.0% target rate. Calibration metrics were independently executed before the test set was opened. The missing-qualifying analysis was retained because the data showed an inner join would remove 3 result rows, including one top-ten outcome. AI output was not treated as evidence for data claims; the notebook's observed values are the evidence. Result: the training audit found 3/1,200 (0.25%) result rows without a qualifying match, with target values 1, 0 and 0 — so an inner join would change the evaluated population, and the fixed fallback was retained. Limitation: the missing subgroup is very small, so its observed target rate is not stable evidence by itself.
+
+## Contributions
 
 | Member | Contribution and evidence reference |
-| Álvaro Torres | Sections 4-7; last EDA, Baselines and check, Freeze and Final interpretation. Prompts referenced below. |
-| Sebastián Ramorino | Sections 1-3; initial exploration, EDA questions proposal, first 2 EDA questions. Prompts referenced below. |
+|---|---|
+| Sebastián Ramorino | Sections 1–3: target/audit definition, initial data-quality checks (duplicate keys, qualifying-only/results-only anti-joins, missing values, coverage), EDA question proposal (6 candidates), and first 2 EDA questions coded and debugged (grid-slot top10 rate; qualifying position vs. grid position, including the categorical dtype bugfix). Prompts referenced below (entries 1–3). |
+| Álvaro Torres | Sections 4–7: EDA Question 3 (constructor effect / qualifying-position bands and seasonal stability), missing-qualifying / selection-trap analysis, temporal-split and test-period discipline, baseline evaluation, interpretation, AI-use documentation, and reproducibility documentation. Prompt referenced below (entry 4). |
 
-Prompts used:
-Sebastian Ramorino
-# 1. 
-- Tool:Claude Sonnet 5 Medium
+## Prompts used
+
+**Sebastián Ramorino**
+
+### 1.
+- Tool: Claude Sonnet 5 Medium
 - Purpose: Initial exploration of the database along with proposal of possible EDA questions given the context.
-- Meaningful assistance: Cleared up the prediction moment and unit of observation. The rest is mostly stuff I already knew from reading the problem and looking at the data.
-Apart from this, the ideas for EDA were helpful. I ended up going with the first three EDA prompts.
+- Meaningful assistance: Cleared up the prediction moment and unit of observation. The rest is mostly stuff already known from reading the problem and looking at the data. The EDA ideas were helpful; ended up going with the first three EDA prompts.
 
-## PROMPT:
-"This is a small database of F1 races along with a lot of relevant data about them going from 2019 to 2021. 
-After qualifying and before the Grand Prix, can we anticipate whether a driver will be classified in the final top ten? Use one driver in one race as the observation. For this lab, target = 1 when the source's numeric final race position is 1–10, and 0 otherwise. This is final classification, not necessarily completing the race, receiving points or winning a constructor contest.
-
-For this purpose, state the prediction moment, the unit, the population and the target. Distinguish final classification from completing a race. Explain the source limitations. 
-
-After this, propose a couple (6) EDA questions. Do not code anything yet; however, keep in mind that these questions must present the possibility to add an INTERPRETABLE table/graph."
-
-Claude:
-## 1. Prediction moment, unit, population, target
-
-**Prediction moment:** Right after qualifying is finalized and the starting grid is set — i.e., after Q1/Q2/Q3 results are known but before lights out. At this point you have access to grid slot, qualifying position/time, driver, constructor, circuit, season/round — but nothing that happens *during* the race (laps completed, status, points).
-
-**Unit of observation:** One driver in one Grand Prix (a driver–race pair). Each row in the `train` table is one such observation.
-
-**Population:** All driver–race pairs across the 2019–2021 seasons for which a qualifying record exists (i.e., the driver actually took part in qualifying and got a grid slot). Rows with missing qualifying data are technically part of the population of races but can't be used as pre-race-informed observations unless you impute.
-
-**Target:** Binary. `target_top10 = 1` if the driver's final numeric classified position is between 1 and 10 inclusive; `0` otherwise (includes retirements, DNFs, DSQs, and anyone classified 11th or lower). This must be read from the **numeric position field**, not from `position_text` or `status`, since those contain non-numeric codes (`R`, `W`, `D`, etc.) that need to be mapped to 0.
-
-**Classification vs. completing the race — important distinction:**
-- *Completing the race* (status = "Finished") means the driver crossed the line under power having run the full race distance/laps.
-- *Final classification* is an FIA determination: a driver can be **classified without finishing** (e.g., retires with mechanical failure late in the race but has completed ≥90% of the winner's race distance — common statuses like "Gearbox," "Brakes," "Accident" can still carry a numeric position), and conversely a driver who **does finish** all laps can still be classified outside the top 10, or even unclassified if they fell too far behind.
-- So "top 10 finish" ≠ "top 10 classification." The target here is strictly about the numeric classified position, independent of whether `status` says "Finished" or something else.
-
-**Source limitations:**
-- Missing qualifying data: 2 rows in 2019, 0 in 2020, 1 in 2021 — these drivers have no pre-race grid/quali features, so they either need to be dropped or carefully imputed (and dropping isn't fully "missing at random," since a missing quali time often means a crash, mechanical issue in Q, or a driver who didn't set a time and started from the back/pit lane — this could bias the label distribution if excluded).
-- `grid` vs `qualifying_position` can diverge (grid penalties for gearbox changes, causing yellow flags, impeding, etc.), so grid is the more faithful "pre-race" feature — qualifying position tells you raw pace, grid tells you where they actually start.
-- Only 3 seasons (2019–2021) covered, and all under the pre-2022 aerodynamic regulations — any model trained here won't generalize to the current car generation or new tracks.
-- No weather, tire allocation, penalty, or reliability/track-status data — all known drivers of race-day variance that aren't captured, which caps how predictable the outcome can be from quali alone.
-- `position_text` mixes numeric strings with letter codes, so type coercion needs to be handled carefully before deriving the target (silent NaNs from a naive `.astype(int)` are an easy bug here).
-- Small season-level sample sizes (~340–440 rows/season) limit how finely you can slice by circuit or constructor without running into sparse cells.
-
-## 2. Proposed EDA questions (pre-race features only, each interpretable as a table or chart)
-
-1. **Grid position → top-10 rate.** What is the empirical probability of a top-10 classification for each starting grid slot (or grid buckets like 1–3 / 4–6 / 7–10 / 11+)? → bar chart or table of top10 rate by grid bucket.
-2. **Qualifying position vs. grid position.** Do the two diverge often enough to matter (grid penalties), and does using one vs. the other change how strongly it predicts top10? → table comparing top10 rate curves for `qualifying_position` vs `grid`.
-3. **Constructor strength.** Do certain constructors show a consistently higher top10 rate even after controlling for grid position (i.e., is there a "car effect" beyond starting slot)? → grouped bar/table of top10 rate by constructor, optionally split by grid bucket.
-4. **Circuit effect on overtaking.** Does the grid→top10 relationship vary by circuit (e.g., Monaco vs. a high-overtake track like Bahrain)? → heatmap or small-multiple table of top10 rate by circuit × grid bucket.
-5. **Season trend.** Did the predictive strength of grid/quali position on top10 shift from 2019 to 2021 (possible rule or competitive-balance changes)? → line/table of top10 rate by grid bucket, one line per season.
-6. **Upsets / position swings.** Among the drivers who did achieve a top-10 classification, how far did they move from their grid slot to their final position (front-runners holding station vs. midfield drivers gaining places)? → histogram or summary table of (grid − final position) for the top10 = 1 subset.
-
-# 2. 
+### 2.
 - Tool: Claude Sonnet 5 Medium
-- Purpose: Programming the necessary checks for question number 1
-- Meaningful assistance: Provided code that I had to clean up to create the relevant checks without much extra clutter.
-## PROMPT
+- Purpose: Programming the necessary checks for question number 1.
+- Meaningful assistance: Provided code that had to be cleaned up to create the relevant checks without much extra clutter.
 
-"Could you code checks for duplicate keys, qualifying-only records, missing values and coverage?"
-
-(Code in the runbook.)
-
-# 3.
+### 3.
 - Tool: Claude Sonnet 5 Medium
-- Purpose: Programming EDA
+- Purpose: Programming EDA.
 - Meaningful assistance: Provided data exploration and graphs.
 
-## PROMPT
+**Álvaro Torres**
 
-"Could you now program the EDA analysis for prompts: Grid position → top-10 rate, and Qualifying position vs. grid position."
-
-(Code in the runbook.)
-
-# 4.
-- Tool: ChatGPT 5.6 
-- Purpose: Programming remaining EDA, baselines, freeze and final conclusion
-- Meaningful assistance: Provided said elements, later reinterpreted and verified by the group to make better sense in the context.
-
-(All content in runbook.)
+### 4.
+- Tool: ChatGPT 5.6
+- Purpose: Programming remaining EDA, baselines, freeze and final conclusion.
+- Meaningful assistance: Suggested three train-only EDA questions; drafted code for qualifying-position bands, seasonal stability, and the missing-qualifying selection check; drafted neutral explanations of the confusion-matrix metrics and prediction-moment constraints. All outputs were reinterpreted and verified by the group (see Verification above) to make sense in context — observed values from the notebook, not AI output, were treated as evidence for data claims.
